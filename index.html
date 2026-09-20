@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07090f">
+  <meta name="description" content="NXT CLOUD — the all-in-one crypto launchpad for DEX trading, token launches, and AI.">
+  <title>NXT CLOUD — DEX • Launchpad • AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="NXT CLOUD home"><span class="brand-mark">NXT</span><span>CLOUD</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#dex" data-route="dex">DEX</a>
+      <a href="#launchpad" data-route="launchpad">Launchpad</a>
+      <a href="#ai" data-route="ai">NXT AI</a>
+    </nav>
+    <button class="wallet-btn" id="walletBtn"><span class="status-dot"></span><span id="walletLabel">Connect Wallet</span></button>
+  </header>
+
+  <main>
+    <section class="page active" id="home">
+      <div class="hero">
+        <div class="eyebrow"><span></span> THE NEXT GENERATION OF WEB3</div>
+        <h1>Everything you need to<br><em>build on-chain.</em></h1>
+        <p class="hero-copy">Trade. Launch. Create. NXT CLOUD brings decentralized trading, multi-chain token launches, and intelligent AI tools into one seamless platform.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#dex">Open NXT DEX <span>↗</span></a>
+          <a class="ghost-btn" href="#launchpad">Launch a Token</a>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <a class="product-card card-dex" href="#dex">
+          <div class="card-top"><span class="icon-box">↗</span><span class="pill live">LIVE</span></div>
+          <div><h2>NXT DEX</h2><p>Swap and explore digital assets across supported networks from one trading interface.</p></div>
+          <span class="card-link">Open Exchange <b>→</b></span>
+        </a>
+        <a class="product-card card-launch" href="#launchpad">
+          <div class="card-top"><span class="icon-box">✦</span><span class="pill">MULTI-CHAIN</span></div>
+          <div><h2>Launchpad</h2><p>Create and configure tokens with a guided deployment flow built for multiple chains.</p></div>
+          <span class="card-link">Create Token <b>→</b></span>
+        </a>
+        <a class="product-card card-ai" href="#ai">
+          <div class="card-top"><span class="icon-box">✧</span><span class="pill">AI</span></div>
+          <div><h2>NXT AI</h2><p>Use AI-powered research, market tools, and on-chain assistance inside NXT CLOUD.</p></div>
+          <span class="card-link">Open NXT AI <b>→</b></span>
+        </a>
+      </div>
+
+      <div class="stats">
+        <div><strong>01</strong><span>Unified platform</span></div>
+        <div><strong>08</strong><span>Chain-ready architecture</span></div>
+        <div><strong>24/7</strong><span>On-chain access</span></div>
+      </div>
+    </section>
+
+    <section class="page" id="dex">
+      <div class="section-heading"><div><div class="eyebrow"><span></span> NXT DEX</div><h1>Trade without the clutter.</h1></div><div class="network-select"><span class="network-dot"></span><select id="chainSelect"><option>Solana</option><option>Ethereum</option><option>Base</option><option>BNB Chain</option><option>Polygon</option><option>Arbitrum</option><option>Avalanche</option><option>Sui</option></select></div></div>
+      <div class="dex-layout">
+        <div class="panel swap-panel">
+          <div class="panel-title"><span>Swap</span><button class="mini-btn" id="settingsBtn">⚙</button></div>
+          <div class="token-box"><div class="token-label">You pay</div><div class="token-row"><input id="payAmount" type="number" min="0" placeholder="0.00"><button class="token-select" id="payToken">SOL <span>⌄</span></button></div><div class="balance">Balance <span id="payBalance">—</span></div></div>
+          <button class="flip" id="flipBtn">↓</button>
+          <div class="token-box"><div class="token-label">You receive</div><div class="token-row"><input id="receiveAmount" readonly placeholder="0.00"><button class="token-select" id="receiveToken">USDC <span>⌄</span></button></div><div class="balance">Rate <span id="rate">Connect wallet to quote</span></div></div>
+          <button class="primary-btn full" id="swapBtn">Connect wallet to swap</button>
+          <div class="notice">Quotes and execution are routed through the connected network. Never sign a transaction you don't recognize.</div>
+        </div>
+        <div class="panel market-panel"><div class="panel-title"><span>Market overview</span><span class="muted">Coming live</span></div><div class="market-placeholder"><div class="pulse-ring">NXT</div><h3>Market data layer ready</h3><p>Connect a market-data provider to populate live charts, liquidity, and route quotes.</p></div></div>
+      </div>
+    </section>
+
+    <section class="page" id="launchpad">
+      <div class="section-heading"><div><div class="eyebrow"><span></span> NXT LAUNCHPAD</div><h1>Launch your token.</h1></div><div class="step-indicator"><b id="stepNum">01</b> / 04</div></div>
+      <div class="launch-layout">
+        <div class="panel wizard">
+          <div class="steps"><span class="active">01 Chain</span><span>02 Token</span><span>03 Review</span><span>04 Deploy</span></div>
+          <div class="wizard-content" id="wizardContent">
+            <h2>Choose your network</h2><p class="muted">Select the blockchain where your token will be deployed.</p>
+            <div class="chain-grid">
+              <button class="chain-card selected" data-chain="Solana"><span class="chain-symbol">S</span><span>Solana</span><small>Popular</small></button><button class="chain-card " data-chain="Ethereum"><span class="chain-symbol">E</span><span>Ethereum</span><small>Popular</small></button><button class="chain-card " data-chain="Base"><span class="chain-symbol">B</span><span>Base</span><small>Popular</small></button><button class="chain-card " data-chain="BNB Chain"><span class="chain-symbol">B</span><span>BNB Chain</span><small>Supported</small></button><button class="chain-card " data-chain="Polygon"><span class="chain-symbol">P</span><span>Polygon</span><small>Supported</small></button><button class="chain-card " data-chain="Arbitrum"><span class="chain-symbol">A</span><span>Arbitrum</span><small>Supported</small></button><button class="chain-card " data-chain="Avalanche"><span class="chain-symbol">A</span><span>Avalanche</span><small>Supported</small></button><button class="chain-card " data-chain="Sui"><span class="chain-symbol">S</span><span>Sui</span><small>Supported</small></button>
+            </div>
+            <button class="primary-btn full" id="nextStep">Continue <span>→</span></button>
+          </div>
+        </div>
+        <aside class="panel launch-summary"><span class="eyebrow">LAUNCH SUMMARY</span><div class="summary-item"><span>Network</span><b id="summaryChain">Solana</b></div><div class="summary-item"><span>Token</span><b id="summaryToken">Not configured</b></div><div class="summary-item"><span>Deployment</span><b>Wallet signature</b></div><div class="security"><span>✓</span><div><b>Non-custodial</b><p>NXT CLOUD never takes custody of your funds or private keys.</p></div></div></aside>
+      </div>
+    </section>
+
+    <section class="page" id="ai">
+      <div class="ai-shell panel">
+        <div class="ai-sidebar"><div class="eyebrow"><span></span> NXT AI</div><h2>Your on-chain copilot.</h2><p>Ask about markets, tokens, protocols, or how to use NXT CLOUD.</p><div class="suggestions"><button>Analyze a token</button><button>Explain this transaction</button><button>Compare networks</button></div></div>
+        <div class="chat"><div class="chat-header"><span class="ai-orb">✦</span><div><b>NXT AI</b><small>Ready</small></div></div><div class="messages" id="messages"><div class="message assistant">Welcome to NXT AI. I can help you understand markets, tokens, chains, and the tools inside NXT CLOUD.<br><br><span class="muted">Connect an AI provider in your Cloudflare Worker to enable live responses.</span></div></div><form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Ask NXT AI anything..." autocomplete="off"><button aria-label="Send">↑</button></form></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 NXT CLOUD</span><span>DEX · LAUNCHPAD · AI</span></footer>
+  <div class="toast" id="toast"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
