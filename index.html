@@ -14,7 +14,22 @@
 <body>
   <div class="noise"></div><div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="NXT CLOUD home"><span class="logo-mark"><i></i><i></i><i></i></span><span>NXT<span class="brand-light">CLOUD</span></span></a>
+    <div class="brand-menu">
+      <a class="brand" href="#home" aria-label="NXT CLOUD home"><span class="logo-mark"><i></i><i></i><i></i></span><span>NXT<span class="brand-light">CLOUD</span></span></a>
+      <div class="cloud-menu">
+        <button class="cloud-menu-btn" id="cloudMenuBtn" aria-expanded="false" aria-controls="cloudMenu">NXT CLOUD <span>⌄</span></button>
+        <div class="cloud-menu-panel" id="cloudMenu" role="menu">
+          <div class="menu-label">NXT CLOUD</div>
+          <a href="#home" role="menuitem"><span class="menu-icon">⌂</span><span><b>Overview</b><small>Home dashboard</small></span></a>
+          <a href="#dex" role="menuitem"><span class="menu-icon">↗</span><span><b>NXT DEX</b><small>Trade & markets</small></span></a>
+          <a href="#launchpad" role="menuitem"><span class="menu-icon">✦</span><span><b>NXT Launchpad</b><small>Create & launch</small></span></a>
+          <a href="#ai" role="menuitem"><span class="menu-icon">✧</span><span><b>NXT AI</b><small>On-chain copilot</small></span></a>
+          <div class="menu-divider"></div>
+          <div class="menu-label">PLATFORM</div>
+          <button type="button" role="menuitem" class="menu-disabled"><span class="menu-icon">◌</span><span><b>More tools</b><small>Coming soon</small></span></button>
+        </div>
+      </div>
+    </div>
     <nav class="nav" aria-label="Main navigation">
       <a href="#dex" data-route="dex">DEX</a><a href="#launchpad" data-route="launchpad">Launchpad</a><a href="#ai" data-route="ai">NXT AI</a>
     </nav>
