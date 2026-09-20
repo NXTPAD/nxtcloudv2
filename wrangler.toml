@@ -1,3 +1,9 @@
 name = "nxtcloudv2"
+main = "src/index.js"
 compatibility_date = "2026-09-19"
-pages_build_output_dir = "."
+
+[assets]
+directory = "."
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
