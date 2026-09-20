@@ -3,14 +3,6 @@ const toastEl=document.getElementById("toast");
 function toast(msg){toastEl.textContent=msg;toastEl.classList.add("show");setTimeout(()=>toastEl.classList.remove("show"),2600)}
 function route(){let id=location.hash.replace("#","")||"home";if(!routes.includes(id))id="home";document.querySelectorAll(".page").forEach(x=>x.classList.toggle("active",x.id===id));document.querySelectorAll(".nav a").forEach(x=>x.classList.toggle("active",x.dataset.route===id));window.scrollTo({top:0,behavior:"smooth"})}
 window.addEventListener("hashchange",route);route();
-
-const cloudMenu=document.getElementById("cloudMenu"),cloudMenuBtn=document.getElementById("cloudMenuBtn");
-function closeCloudMenu(){cloudMenu?.classList.remove("open");cloudMenuBtn?.setAttribute("aria-expanded","false")}
-cloudMenuBtn?.addEventListener("click",e=>{e.stopPropagation();const open=cloudMenu.classList.toggle("open");cloudMenuBtn.setAttribute("aria-expanded",String(open))});
-cloudMenu?.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeCloudMenu));
-document.addEventListener("click",e=>{if(!e.target.closest(".cloud-menu"))closeCloudMenu()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCloudMenu()});
-
 let connected=false;
 document.getElementById("walletBtn").addEventListener("click",async()=>{
  if(connected){connected=false;document.getElementById("walletLabel").textContent="Connect Wallet";toast("Wallet disconnected");return}
